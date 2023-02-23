@@ -28,6 +28,11 @@ public class User{
     @Column(unique = true)
     private String phone;
     private String password;
+     public void setPhone(String phone) {
+        if (phone != null && !phone.startsWith("+")) {
+            phone = "+1" + phone;
+        }
+        this.phone = phone;
 
     
 }
